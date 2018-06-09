@@ -1,0 +1,6 @@
+/build
+*.iml
+libs/arm64-v8a/libmaple-rtc-sdk-jni.so
+libs/armeabi-v7a/libmaple-rtc-sdk-jni.so
+libs/x86/libmaple-rtc-sdk-jni.so
+libs/maple-sdk.jar
