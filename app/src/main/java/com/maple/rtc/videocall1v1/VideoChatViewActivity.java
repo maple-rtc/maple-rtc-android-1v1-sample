@@ -92,7 +92,7 @@ public class VideoChatViewActivity extends AppCompatActivity {
 
         }
         @Override
-        public void onAudioVolumeIndication(int volume){
+        public void onAudioVolumeIndication(String volumeInfo, int totalVolume){
 
         }
 
