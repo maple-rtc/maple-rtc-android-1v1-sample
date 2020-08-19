@@ -38,7 +38,7 @@ public class VideoChatViewActivity extends AppCompatActivity {
 
     private boolean isRemoteView = false;
 
-    private String ownUserId = null;
+    private String ownUserId = "";
 
     private String channelName;
     private Map<String, SurfaceView> surfaceViewMap;
@@ -309,7 +309,7 @@ public class VideoChatViewActivity extends AppCompatActivity {
 
     // Tutorial Step 5
     private void setupRemoteVideo(String uid) {
-        if(ownUserId.equals(uid)){
+        if(ownUserId.length() > 0 && ownUserId.equals(uid)){
             return;
         }
         //创建渲染view
@@ -324,7 +324,7 @@ public class VideoChatViewActivity extends AppCompatActivity {
     }
 
     private void removeRemoteVideo(String uid) {
-        if(ownUserId.equals(uid)){
+        if(ownUserId.length() > 0  && ownUserId.equals(uid)){
             return;
         }
         //停止接受远端视频
@@ -362,7 +362,7 @@ public class VideoChatViewActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        mBMediaKit.joinChannel(channelName);
+        mBMediaKit.leaveChannel();
         super.onBackPressed();
     }
 
